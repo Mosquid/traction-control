@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: #ebecf0;
+      }
+      textarea {
+        min-width: 200px;
+        min-height: 300px;
+      }
+      textarea,
+      input {
+        outline: none;
+        padding: 15px 15px;
+        min-width: 300px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+        border: none;
+        box-shadow: inset 2px 2px 5px #babecce6, inset -5px -5px 10px white;
+        font-size: 16px;
+        border-radius: 13px;
+        background: #ebecf0;
+        transition: all ease 0.3s;
+      }
+      textarea:focus,
+      input:focus {
+        box-shadow: inset 2px 2px 2px #babecce6, inset -5px -5px 5px white;
+      }
+      label {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      button {
+        margin-top: 15px;
+        outline: none;
+        border-width: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        background-color: #eeeeee;
+        padding: 20px 25px;
+        font-size: 20px;
+        border-radius: 10px;
+        box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+          7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+        transition: box-shadow 0.2s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+      }
+      button:hover {
+        box-shadow: -7px -7px 20px 0px #fff9, -2px -2px 3px 0px #fff9,
+          3px 3px 10px 0px #0002, 4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      }
+
+      button:active {
+        box-shadow: -7px -7px 20px 0px #fff9, -2px -2px 3px 0px #fff9,
+          inset 3px 3px 10px 0px #0002, 4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      }
+      #options {
+        padding-top: 3vh;
+        padding-left: 5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="options">
+      <p>
+        <label for="parasites"
+          >Enter a list of parasite websites (one per line):</label
+        >
+      </p>
+      <textarea id="parasites"></textarea>
+      <p><label for="Redirect URL">Where to redirect</label></p>
+      <input id="redirect" type="text" placeholder="Redirect URL" />
+      <button id="save">Save</button>
+    </div>
+  </body>
+  <script src="options.js"></script>
+</html>
