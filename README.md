@@ -1,4 +1,4 @@
-# force-focus
+# Traction Control 
 ## A Chrome extension that keeps you focused
 
 
