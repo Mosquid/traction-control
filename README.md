@@ -1,8 +1,6 @@
 # Traction Control 
 ## A Chrome extension that keeps you focused
 
-
-ForceFocus will redirect you back to your TODO list every time you enter one of the "parasite" websites.
-Staying focused means staying productive.
+Traction Control is a Chrome extension that helps boost your productivity by redirecting your browsing habits from procrastination websites to the website you should be focusing on.
 
 <img src="screenshots/screenshot.png" width="400" height="auto">
