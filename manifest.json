@@ -1,12 +1,20 @@
 {
   "name": "Traction Control",
-  "version": "1.0",
+  "version": "2.0",
   "description": "An extension that keeps you focused.",
-  "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "tabs",
+    "offscreen",
+    "declarativeNetRequest"
+  ],
   "options_page": "options.html",
   "background": {
     "service_worker": "background.js"
   },
+  "host_permissions": ["http://*/*", "https://*/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
