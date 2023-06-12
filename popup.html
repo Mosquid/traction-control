@@ -2,15 +2,143 @@
 <html>
   <head>
     <style>
-      button {
-        height: 30px;
-        width: 30px;
+      body {
+        background: #ebecf0;
+      }
+      textarea {
+        min-width: 200px;
+        min-height: 200px;
+      }
+      textarea,
+      input {
         outline: none;
+        padding: 15px 15px;
+        min-width: 300px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+        border: none;
+        box-shadow: inset 2px 2px 5px #babecce6, inset -5px -5px 10px white;
+        font-size: 16px;
+        border-radius: 13px;
+        background: #ebecf0;
+        transition: all ease 0.3s;
+      }
+      textarea:focus,
+      input:focus {
+        box-shadow: inset 2px 2px 2px #babecce6, inset -5px -5px 5px white;
+      }
+      label {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      button {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        outline: none;
+        border-width: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        background-color: #eeeeee;
+        padding: 10px 15px;
+        font-size: 14px;
+        border-radius: 10px;
+        box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+          7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+        transition: box-shadow 0.2s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+      }
+      button:hover {
+        box-shadow: -7px -7px 20px 0px #fff9, -2px -2px 3px 0px #fff9,
+          3px 3px 10px 0px #0002, 4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      }
+
+      button:active {
+        box-shadow: -7px -7px 20px 0px #fff9, -2px -2px 3px 0px #fff9,
+          inset 3px 3px 10px 0px #0002, 4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      }
+      #options {
+        padding: 20px;
+      }
+      .label {
+        padding: 10px 0;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        color: #394a56;
+      }
+
+      .label-text {
+        margin-left: 16px;
+      }
+
+      .toggle {
+        isolation: isolate;
+        position: relative;
+        height: 30px;
+        width: 60px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6,
+          4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+      }
+
+      .toggle-state {
+        display: none;
+      }
+
+      .indicator {
+        height: 100%;
+        width: 200%;
+        background: #ecf0f3;
+        border-radius: 15px;
+        transform: translate3d(-75%, 0, 0);
+        transition: all 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+        box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+      }
+
+      .toggle-state:checked ~ .indicator {
+        background-color: #34e676;
+        transform: translate3d(25%, 0, 0);
       }
     </style>
   </head>
   <body>
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
+    <div id="options">
+      <div>
+        <label class="label">
+          <div class="toggle">
+            <input
+              id="active"
+              class="toggle-state"
+              type="checkbox"
+              name="check"
+              value="check"
+            />
+            <div class="indicator"></div>
+          </div>
+          <div class="label-text">Active</div>
+        </label>
+      </div>
+      <p>
+        <label for="parasites"
+          >Enter a list of parasite websites (one per line):</label
+        >
+      </p>
+      <textarea id="parasites"></textarea>
+      <p><label for="Redirect URL">Where to redirect:</label></p>
+      <input id="redirect" type="text" placeholder="Redirect URL" />
+      <button id="save">Save</button>
+    </div>
   </body>
+  <script src="popup.js"></script>
 </html>
