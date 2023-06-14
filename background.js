@@ -16,7 +16,7 @@ chrome.tabs.onUpdated.addListener(() => {
             const parasiteList = JSON.parse(parasites);
 
             for (let parasite of parasiteList) {
-              if (currentTabUrl.includes(parasite)) {
+              if ((currentTabUrl || "").includes(parasite)) {
                 chrome.tabs.update(id, { url: redirect });
                 break;
               }
